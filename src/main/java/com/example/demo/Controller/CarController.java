@@ -6,8 +6,10 @@ import java.util.Map;
 
 import com.example.demo.Model.Car;
 import com.example.demo.Model.Exception.EntityNotFoundException;
+import com.example.demo.Model.Exception.InvalidInputException;
 import com.example.demo.Repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,10 +28,12 @@ public class CarController {
 
     private final CarRepository repo;
 
-    @Autowired
+
     public CarController(CarRepository _repo) {
+
         this.repo = _repo;
     }
+
     @GetMapping("/getAll")
     public Collection<Car> getAll()
     {
@@ -43,13 +47,13 @@ public class CarController {
     }
 
     @PostMapping("/add")
-    public void addCar(@Valid @RequestBody Car car)
+    public void addCar(@Valid @RequestBody Car car) throws InvalidInputException
     {
         this.repo.addOrUpdate(car);
     }
 
     @PutMapping("/edit")
-    public void editCar(@RequestBody Car car)
+    public void editCar(@RequestBody Car car) throws InvalidInputException
     {
         repo.addOrUpdate(car);
     }

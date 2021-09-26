@@ -6,17 +6,22 @@ import java.util.Map;
 
 import com.example.demo.Model.Car;
 import com.example.demo.Model.Exception.EntityNotFoundException;
+import com.example.demo.Model.Exception.InvalidInputException;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class CarRepositoryImpl implements CarRepository {
 
+    
     private final static Map<Integer, Car> repo = new HashMap<>();
 
-    
-    public void addOrUpdate(Car car) {
+    public void addOrUpdate(Car car) throws InvalidInputException {
         // TODO Auto-generated method stub
         System.out.println(car);
+        if(car.getId() < 3 || car.getId() == null)
+        {
+            throw new InvalidInputException(car.getId());
+        }
         repo.put(car.getId(), car);
     }
 

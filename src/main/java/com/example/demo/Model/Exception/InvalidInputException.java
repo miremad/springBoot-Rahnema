@@ -1,18 +1,13 @@
 package com.example.demo.Model.Exception;
 
-import lombok.*;
+public class InvalidInputException extends Exception  {
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class EntityNotFoundException extends Exception{
-    
     private String message;
     private Integer id;
 
-    public EntityNotFoundException(Integer id)
+    public InvalidInputException(Integer id)
     {
-        super("Not Found");
+        super("Invalid Data");
         this.id = id;
     }
 
