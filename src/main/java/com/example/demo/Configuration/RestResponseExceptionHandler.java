@@ -1,10 +1,10 @@
-package com.example.demo.Configuration;
+package com.example.demo.configuration;
 
 import java.net.http.WebSocket;
 
 
-import com.example.demo.Model.Exception.EntityNotFoundException;
 import com.example.demo.Model.Exception.InvalidInputException;
+import com.example.demo.model.exception.EntityNotFoundException;
 import lombok.*;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

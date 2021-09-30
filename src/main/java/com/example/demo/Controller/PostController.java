@@ -1,11 +1,10 @@
-package com.example.demo.Controller;
+package com.example.demo.controller;
 
-import com.example.demo.Model.Car;
-import com.example.demo.Model.Exception.EntityNotFoundException;
+
 import com.example.demo.Model.Exception.InvalidInputException;
-import com.example.demo.Model.Post;
-import com.example.demo.Repository.CarRepository;
-import com.example.demo.Repository.PostRepository;
+import com.example.demo.model.Post;
+import com.example.demo.model.exception.EntityNotFoundException;
+import com.example.demo.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;

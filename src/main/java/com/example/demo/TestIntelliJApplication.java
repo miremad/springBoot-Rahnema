@@ -40,19 +40,22 @@ public class TestIntelliJApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
         System.out.print("---------------------------run----------");
         Person person = new Person((long)1, "miremad");
         this.personRepo.save(person);
 
+
         Post post = new Post((long) 1, new Date(), "first", "iohihihihi", person );
         this.postRepo.save(post);
 
-        Iterable<Post> posts = this.postRepo.findAll();
 
+        Iterable<Post> posts = this.postRepo.findAll();
         for(Post p : posts)
         {
             System.out.println(p);
         }
+
 
         User user = new User(1L, "admin", passwordEncoder.encode("admin"),
                 true, "admin", 12, new ArrayList<>());
@@ -62,6 +65,7 @@ public class TestIntelliJApplication implements CommandLineRunner {
         for (User u: userRepository.findAll()) {
             System.out.println(u);
         }
+
 
 
     }
