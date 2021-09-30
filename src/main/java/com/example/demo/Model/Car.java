@@ -1,20 +1,16 @@
-package com.example.demo.Model;
+package com.example.demo.model;
 
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.lang.NonNull;
 
-import javax.validation.constraints.NotNull;
-
-
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
 public class Car {
 
-    @NotNull
+    @NonNull
     private Integer id;
     private String name;
     private String company;
-    
-  
 
 }

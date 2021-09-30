@@ -1,17 +1,17 @@
-package com.example.demo.Repository;
+package com.example.demo.repository;
 
-import com.example.demo.Model.Car;
-import com.example.demo.Model.Exception.EntityNotFoundException;
-import com.example.demo.Model.Exception.InvalidInputException;
+
+import com.example.demo.model.Car;
+import com.example.demo.model.exception.EntityNotFoundException;
+
 
 import java.util.Collection;
 
 public interface CarRepository {
-    
-    void addOrUpdate(Car car) throws InvalidInputException;
-    Car get(Integer id) throws EntityNotFoundException;
-    void Delete(Integer id);
-    Collection<Car> getAll();
 
-    
+    void addOrUpdate(Car car);
+    Car get(Integer id) throws EntityNotFoundException;
+    void delete(Integer id);
+    Collection<Car> all();
+
 }

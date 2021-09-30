@@ -1,24 +1,20 @@
-package com.example.demo.Model.Exception;
+package com.example.demo.model.exception;
 
-import lombok.*;
+public class EntityNotFoundException extends Exception {
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class EntityNotFoundException extends Exception{
-    
-    private String message;
-    private Integer id;
+    private final Integer id;
 
-    public EntityNotFoundException(Integer id)
-    {
-        super("Not Found");
+    public EntityNotFoundException(Integer id) {
+        super("entity not found");
         this.id = id;
     }
 
-    public Integer getId()
-    {
-        return this.id;
+    public EntityNotFoundException(Long id) {
+        super("entity not found");
+        this.id = id.intValue();
     }
 
+    public Integer getId() {
+        return id;
+    }
 }

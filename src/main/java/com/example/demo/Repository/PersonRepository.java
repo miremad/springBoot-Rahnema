@@ -1,15 +1,15 @@
-package com.example.demo.Repository;
+package com.example.demo.repository;
 
-import com.example.demo.Model.Person;
-import org.springframework.data.domain.Page;
-import org.springframework.data.repository.CrudRepository;
+
+import com.example.demo.model.Person;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
 
-import java.awt.print.Pageable;
 import java.util.Collection;
 
-public interface PersonRepository extends PagingAndSortingRepository<Person, String> {
+@Repository
+public interface PersonRepository extends PagingAndSortingRepository<Person, Long> {
 
-    Collection<Person> findAllByNameContaining(String query);
+    Collection<Person> findByNameContaining(String name);
 
 }
